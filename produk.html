@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - Toko Parabot 24/7</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="homepage.css">
+
+    <style>
+        .product-banner {
+            background: linear-gradient(120deg, #102a56, #155eef);
+            color: white;
+            padding: 45px 4%;
+            text-align: center;
+        }
+
+        .product-banner h2 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .product-banner p {
+            color: #e1eaff;
+        }
+
+        .product-page {
+            width: min(1200px, 92%);
+            margin: auto;
+            padding: 35px 0 55px;
+        }
+
+        .product-tools {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .product-tools p {
+            color: #718096;
+        }
+
+        .product-tools select {
+            padding: 11px 14px;
+            border: 1px solid #e4eaf3;
+            border-radius: 9px;
+            background: white;
+            color: #26354d;
+        }
+
+        .filter-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-categories a {
+            padding: 9px 17px;
+            border: 1px solid #dce5f3;
+            border-radius: 20px;
+            background: white;
+            color: #26354d;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .filter-categories a:hover,
+        .filter-categories a.active {
+            background: #155eef;
+            color: white;
+            border-color: #155eef;
+        }
+
+        .product-card img {
+            height: 190px;
+            object-fit: contain;
+        }
+
+        .product-category {
+            color: #718096;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .product-rating {
+            color: #f4a900;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .stock {
+            color: #16865d;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .product-card .old-price {
+            color: #9aa5b5;
+            font-size: 12px;
+            font-weight: 400;
+            text-decoration: line-through;
+            margin-right: 5px;
+        }
+
+        .product-card .price {
+            min-height: 28px;
+        }
+
+        .empty-image {
+            width: 100%;
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f4fb;
+            color: #718096;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 520px) {
+            .product-banner h2 {
+                font-size: 27px;
+            }
+
+            .product-card img,
+            .empty-image {
+                height: 135px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-top">
+            <h1>Toko Parabot 24/7</h1>
+
+            <form class="search-box" action="produk.html" method="get">
+                <input type="search" name="cari" placeholder="Cari produk, misalnya blender" aria-label="Cari produk">
+                <button type="submit">Cari</button>
+            </form>
+
+            <a class="cart-link" href="#">Keranjang (0)</a>
+        </div>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- BANNER -->
+    <section class="product-banner">
+        <h2>Semua Produk</h2>
+        <p>Temukan perabot dan elektronik terbaik untuk rumahmu.</p>
+    </section>
+
+    <main class="product-page">
+
+        <!-- INFORMASI PRODUK -->
+        <div class="product-tools">
+            <div>
+                <h2 class="section-title">Katalog Produk</h2>
+                <p>Berbagai kebutuhan rumah tersedia di sini.</p>
+            </div>
+
+            <select aria-label="Urutkan produk">
+                <option value="default">Urutkan produk</option>
+                <option value="termurah">Harga terendah</option>
+                <option value="termahal">Harga tertinggi</option>
+                <option value="nama">Nama produk</option>
+            </select>
+        </div>
+
+        <!-- KATEGORI -->
+        <div class="filter-categories">
+            <a href="#semua" class="active">Semua Produk</a>
+            <a href="#elektronik">Elektronik</a>
+            <a href="#dapur">Peralatan Dapur</a>
+            <a href="#perabot">Perabot Rumah</a>
+            <a href="#pendingin">Pendingin Ruangan</a>
+        </div>
+
+        <!-- DAFTAR PRODUK -->
+        <div class="product-grid" id="semua">
+
+            <!-- 1. BLENDER -->
+            <div class="product-card" id="elektronik">
+                <span class="badge">Diskon 10%</span>
+                <img src="image/blender.jpg" alt="Blender">
+                <p class="product-category">Elektronik</p>
+                <h3>Blender Multifungsi</h3>
+                <div class="product-rating">★★★★★ <span>(24 ulasan)</span></div>
+                <p class="price">
+                    <span class="old-price">Rp390.000</span>
+                    Rp350.000
+                </p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 2. AIR CONDITIONER -->
+            <div class="product-card" id="pendingin">
+                <img src="image/ac.jpg" alt="AC 2 PK">
+                <p class="product-category">Pendingin Ruangan</p>
+                <h3>AC Panasonic 2 PK</h3>
+                <div class="product-rating">★★★★★ <span>(18 ulasan)</span></div>
+                <p class="price">Rp7.699.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 3. SMART TV -->
+            <div class="product-card">
+                <span class="badge">Produk Premium</span>
+                <img src="image/tv.jpg" alt="Smart TV Samsung">
+                <p class="product-category">Elektronik</p>
+                <h3>Smart TV Samsung 100 Inci</h3>
+                <div class="product-rating">★★★★★ <span>(12 ulasan)</span></div>
+                <p class="price">Rp49.000.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 4. RICE COOKER -->
+            <div class="product-card" id="dapur">
+                <img src="image/ricecooker.jpg" alt="Rice Cooker">
+                <p class="product-category">Peralatan Dapur</p>
+                <h3>Rice Cooker Digital</h3>
+                <div class="product-rating">★★★★★ <span>(30 ulasan)</span></div>
+                <p class="price">Rp849.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 5. KULKAS -->
+            <div class="product-card">
+                <span class="badge">Terlaris</span>
+                <img src="image/kulkas.jpg" alt="Kulkas dua pintu">
+                <p class="product-category">Elektronik</p>
+                <h3>Kulkas Dua Pintu</h3>
+                <div class="product-rating">★★★★★ <span>(21 ulasan)</span></div>
+                <p class="price">Rp3.499.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 6. MESIN CUCI -->
+            <div class="product-card">
+                <img src="image/mesincuci.jpg" alt="Mesin cuci">
+                <p class="product-category">Elektronik</p>
+                <h3>Mesin Cuci Otomatis</h3>
+                <div class="product-rating">★★★★☆ <span>(16 ulasan)</span></div>
+                <p class="price">Rp2.899.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 7. KOMPOR -->
+            <div class="product-card" id="perabot">
+                <img src="image/kompor.jpg" alt="Kompor gas">
+                <p class="product-category">Peralatan Dapur</p>
+                <h3>Kompor Gas Dua Tungku</h3>
+                <div class="product-rating">★★★★★ <span>(14 ulasan)</span></div>
+                <p class="price">Rp475.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 8. MICROWAVE -->
+            <div class="product-card">
+                <img src="image/microwave.jpg" alt="Microwave">
+                <p class="product-category">Peralatan Dapur</p>
+                <h3>Microwave Digital</h3>
+                <div class="product-rating">★★★★☆ <span>(11 ulasan)</span></div>
+                <p class="price">Rp1.250.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 9. KIPAS ANGIN -->
+            <div class="product-card">
+                <img src="image/kipas.jpg" alt="Kipas angin">
+                <p class="product-category">Pendingin Ruangan</p>
+                <h3>Kipas Angin Berdiri</h3>
+                <div class="product-rating">★★★★★ <span>(28 ulasan)</span></div>
+                <p class="price">Rp325.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 10. DISPENSER -->
+            <div class="product-card">
+                <img src="image/dispenser.jpg" alt="Dispenser air">
+                <p class="product-category">Elektronik</p>
+                <h3>Dispenser Air Panas dan Dingin</h3>
+                <div class="product-rating">★★★★☆ <span>(9 ulasan)</span></div>
+                <p class="price">Rp699.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 11. MEJA -->
+            <div class="product-card">
+                <img src="image/meja.jpg" alt="Meja minimalis">
+                <p class="product-category">Perabot Rumah</p>
+                <h3>Meja Minimalis Multifungsi</h3>
+                <div class="product-rating">★★★★★ <span>(13 ulasan)</span></div>
+                <p class="price">Rp550.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+            <!-- 12. RAK -->
+            <div class="product-card">
+                <img src="image/rak.jpg" alt="Rak penyimpanan">
+                <p class="product-category">Perabot Rumah</p>
+                <h3>Rak Penyimpanan Serbaguna</h3>
+                <div class="product-rating">★★★★☆ <span>(17 ulasan)</span></div>
+                <p class="price">Rp275.000</p>
+                <p class="stock">Stok tersedia</p>
+                <button class="btn-small">Tambah ke keranjang</button>
+            </div>
+
+        </div>
+
+        <p class="see-all">
+            <a href="index.html">← Kembali ke Beranda</a>
+        </p>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-cols">
+            <div>
+                <h4>Toko Parabot 24/7</h4>
+                <p>Jl. Jendral Sudirma No. 20, Serang</p>
+                <p>Buka setiap hari, 24 jam</p>
+            </div>
+
+            <div>
+                <h4>Bantuan</h4>
+                <a href="kontak.html">Hubungi kami</a>
+                <a href="#">Cara pemesanan</a>
+                <a href="#">Pengiriman</a>
+            </div>
+
+            <div>
+                <h4>Pembayaran</h4>
+                <p>Transfer bank, e-wallet, COD</p>
+            </div>
+        </div>
+
+        <p>
+            <small>
+                &copy; 2026 Sistem Informasi, Web Programming.
+                All Rights Reserved.
+            </small>
+        </p>
+    </footer>
+
+</body>
+
+</html>

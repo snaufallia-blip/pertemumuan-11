@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Toko Parabot 24/7</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="homepage.css">
+
+    <style>
+        .about-hero {
+            background: linear-gradient(120deg, #102a56, #155eef);
+            padding: 65px 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .about-hero h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .about-hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #e1eaff;
+        }
+
+        .about-container {
+            width: min(1100px, 92%);
+            margin: auto;
+            padding: 45px 0;
+        }
+
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+            margin-bottom: 45px;
+        }
+
+        .about-intro h2,
+        .about-heading {
+            color: #102a56;
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .about-intro p {
+            color: #59677d;
+            margin-bottom: 13px;
+            line-height: 1.9;
+        }
+
+        .about-image {
+            min-height: 280px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #dce9ff, #edf3ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .about-placeholder {
+            color: #155eef;
+            font-size: 70px;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0 45px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 15px;
+            border: 1px solid #e4eaf3;
+            box-shadow: 0 8px 25px rgba(20, 50, 100, 0.07);
+            transition: 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card .value-icon {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .value-card h3 {
+            color: #102a56;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 35px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 23px 10px;
+            background: #edf3ff;
+            border-radius: 13px;
+        }
+
+        .stat-card h3 {
+            color: #155eef;
+            font-size: 25px;
+        }
+
+        .stat-card p {
+            color: #59677d;
+            font-size: 13px;
+        }
+
+        .about-cta {
+            text-align: center;
+            padding: 35px 20px;
+            border-radius: 18px;
+            color: white;
+            background: linear-gradient(120deg, #102a56, #155eef);
+        }
+
+        .about-cta h2 {
+            margin-bottom: 10px;
+        }
+
+        .about-cta p {
+            margin-bottom: 20px;
+            color: #e1eaff;
+        }
+
+        @media (max-width: 700px) {
+            .about-intro {
+                grid-template-columns: 1fr;
+            }
+
+            .about-values {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-hero h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-top">
+            <h1>Toko Parabot 24/7</h1>
+
+            <form class="search-box" action="produk.html" method="get">
+                <input type="search" name="cari" placeholder="Cari produk, misalnya blender" aria-label="Cari produk">
+                <button type="submit">Cari</button>
+            </form>
+
+            <a class="cart-link" href="#">Keranjang (0)</a>
+        </div>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- BANNER -->
+    <section class="about-hero">
+        <h2>Mengenal Toko Parabot 24/7</h2>
+        <p>
+            Solusi praktis untuk memenuhi kebutuhan perabot dan elektronik
+            rumah tangga dengan mudah, nyaman, dan terjangkau.
+        </p>
+    </section>
+
+    <main class="about-container">
+
+        <!-- PROFIL TOKO -->
+        <section class="about-intro">
+            <div>
+                <h2>Siapa Kami?</h2>
+
+                <p>
+                    Toko Parabot 24/7 merupakan toko yang menyediakan
+                    berbagai kebutuhan rumah tangga, mulai dari peralatan
+                    dapur, perabot rumah, hingga produk elektronik.
+                </p>
+
+                <p>
+                    Kami hadir untuk membantu pelanggan menemukan produk
+                    yang sesuai dengan kebutuhan sehari-hari melalui
+                    pengalaman belanja yang praktis dan informatif.
+                </p>
+
+                <p>
+                    Melalui website ini, pelanggan dapat melihat katalog
+                    produk, mengetahui harga, dan memperoleh informasi
+                    mengenai layanan toko dengan lebih mudah.
+                </p>
+            </div>
+
+            <div class="about-image">
+                <!-- Ganti dengan gambar toko milikmu -->
+                <img src="img/toko.jpg" alt="Tampilan Toko Parabot 24/7"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+                <div class="about-placeholder" style="display:none;">
+                    🏪
+                </div>
+            </div>
+        </section>
+
+        <!-- VISI DAN MISI -->
+        <h2 class="about-heading">Visi dan Misi Kami</h2>
+
+        <div class="about-values">
+            <article class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Visi</h3>
+                <p>
+                    Menjadi toko pilihan pelanggan dalam memenuhi kebutuhan
+                    perabot dan elektronik rumah tangga dengan layanan yang
+                    terpercaya dan mudah dijangkau.
+                </p>
+            </article>
+
+            <article class="value-card">
+                <div class="value-icon">🚀</div>
+                <h3>Misi</h3>
+                <p>
+                    Menyediakan pilihan produk yang beragam, memberikan
+                    informasi produk yang jelas, serta meningkatkan
+                    kenyamanan pelanggan dalam berbelanja.
+                </p>
+            </article>
+
+            <article class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Komitmen</h3>
+                <p>
+                    Mengutamakan pelayanan yang ramah, informasi harga yang
+                    transparan, dan membantu pelanggan memilih produk sesuai
+                    kebutuhan.
+                </p>
+            </article>
+        </div>
+
+        <!-- KEUNGGULAN -->
+        <h2 class="about-heading">Mengapa Memilih Kami?</h2>
+
+        <div class="about-stats">
+            <div class="stat-card">
+                <h3>24/7</h3>
+                <p>Layanan informasi sepanjang hari</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Praktis</h3>
+                <p>Katalog mudah dijelajahi</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Beragam</h3>
+                <p>Pilihan kebutuhan rumah</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Aman</h3>
+                <p>Informasi belanja yang jelas</p>
+            </div>
+        </div>
+
+        <!-- AJAKAN -->
+        <section class="about-cta">
+            <h2>Temukan Kebutuhan Rumahmu!</h2>
+            <p>
+                Jelajahi berbagai produk yang tersedia di Toko Parabot 24/7.
+            </p>
+            <a href="produk.html" class="btn">Lihat Produk</a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-cols">
+            <div>
+                <h4>Toko Parabot 24/7</h4>
+                <p>Jl. Jendral Sudirma No. 20, Serang</p>
+                <p>Buka setiap hari, 24 jam</p>
+            </div>
+
+            <div>
+                <h4>Bantuan</h4>
+                <a href="kontak.html">Hubungi kami</a>
+                <a href="produk.html">Daftar produk</a>
+                <a href="#">Informasi pengiriman</a>
+            </div>
+
+            <div>
+                <h4>Pembayaran</h4>
+                <p>Transfer bank, e-wallet, COD</p>
+            </div>
+        </div>
+
+        <p>
+            <small>&copy; 2026 Toko Parabot 24/7. All Rights Reserved.</small>
+        </p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,782 @@
+/* ========================================
+   1. RESET DAN PENGATURAN DASAR
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #155eef;
+    --primary-dark: #1045b5;
+    --navy: #102a56;
+    --accent: #ffb703;
+    --background: #f5f8ff;
+    --white: #ffffff;
+    --text: #26354d;
+    --muted: #718096;
+    --border: #e4eaf3;
+    --shadow: 0 8px 25px rgba(20, 50, 100, 0.09);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 42px 0;
+}
+
+/* ========================================
+   2. HEADER DAN NAVIGASI
+======================================== */
+.site-header {
+    background: var(--white);
+    box-shadow: 0 3px 18px rgba(16, 42, 86, 0.08);
+    position: relative;
+    z-index: 10;
+}
+
+.header-top {
+    width: min(1200px, 92%);
+    margin: auto;
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.header-top h1 {
+    color: var(--navy);
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+}
+
+.header-top h1::before {
+    content: "🏠 ";
+}
+
+.search-box {
+    flex: 1;
+    max-width: 510px;
+    display: flex;
+    background: #f2f5fa;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.search-box:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.1);
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px 12px;
+    color: var(--text);
+}
+
+.search-box button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    color: var(--white);
+    background: var(--primary);
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.search-box button:hover {
+    background: var(--primary-dark);
+}
+
+.cart-link {
+    padding: 10px 15px;
+    color: var(--primary);
+    background: #edf3ff;
+    border-radius: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.25s;
+}
+
+.cart-link:hover {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.site-header nav {
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    padding: 14px 20px;
+    background: var(--navy);
+}
+
+.site-header nav a {
+    color: #e5edff;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.site-header nav a:hover {
+    color: var(--accent);
+}
+
+/* ========================================
+   3. HERO BANNER
+======================================== */
+.hero {
+    width: 100%;
+    min-height: 390px;
+    margin: 0;
+    padding: 70px max(4%, calc((100% - 1200px) / 2));
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 85% 25%,
+            rgba(89, 153, 255, 0.5), transparent 28%),
+        linear-gradient(120deg, #102a56, #155eef 75%, #4388ff);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "🏡";
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: clamp(100px, 16vw, 210px);
+    opacity: 0.17;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 660px;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.8s ease both;
+}
+
+.hero-content h2 {
+    color: var(--white);
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    color: #e1eaff;
+    font-size: 17px;
+    max-width: 520px;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 25px;
+    background: var(--accent);
+    color: #23304a;
+    font-weight: 800;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s, background 0.25s;
+}
+
+.btn:hover {
+    background: #ffd166;
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   4. KEUNGGULAN TOKO
+======================================== */
+.benefits {
+    width: min(1200px, 92%);
+    margin: -1px auto 0;
+    padding: 25px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.benefits>div {
+    padding: 20px 15px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s;
+}
+
+.benefits>div:hover {
+    transform: translateY(-5px);
+}
+
+.benefits strong,
+.benefits span {
+    display: block;
+}
+
+.benefits strong {
+    color: var(--navy);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.benefits span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ========================================
+   5. JUDUL SECTION
+======================================== */
+.section-title {
+    color: var(--navy);
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    border-radius: 10px;
+    background: var(--primary);
+}
+
+/* ========================================
+   6. KATEGORI PRODUK
+======================================== */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.category {
+    min-height: 120px;
+    padding: 22px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: 800;
+    background: linear-gradient(145deg, #ffffff, #edf3ff);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.category:nth-child(1) {
+    border-bottom: 4px solid #155eef;
+}
+
+.category:nth-child(2) {
+    border-bottom: 4px solid #ffb703;
+}
+
+.category:nth-child(3) {
+    border-bottom: 4px solid #18a879;
+}
+
+.category:nth-child(4) {
+    border-bottom: 4px solid #8b5cf6;
+}
+
+.category:hover {
+    color: var(--primary);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(21, 94, 239, 0.14);
+}
+
+/* ========================================
+   7. KARTU PRODUK
+======================================== */
+#promo {
+    background: transparent;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 35px rgba(20, 50, 100, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    padding: 8px;
+    margin-bottom: 12px;
+    background: #f8faff;
+    border-radius: 12px;
+    transition: transform 0.35s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    color: var(--navy);
+    font-size: 16px;
+    line-height: 1.5;
+    min-height: 48px;
+    margin-bottom: 8px;
+}
+
+.price {
+    color: #e63946;
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 17px;
+}
+
+.price s {
+    display: block;
+    color: #9aa5b5;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 3px;
+}
+
+.badge {
+    position: absolute;
+    top: 23px;
+    left: 22px;
+    z-index: 2;
+    padding: 5px 10px;
+    border-radius: 7px;
+    color: var(--white);
+    background: #e63946;
+    font-size: 11px;
+    font-weight: 800;
+    box-shadow: 0 3px 8px rgba(230, 57, 70, 0.2);
+}
+
+.product-card .badge:not(:first-child) {
+    background: #18a879;
+}
+
+.btn-small {
+    width: 100%;
+    padding: 11px 10px;
+    border: none;
+    border-radius: 9px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.btn-small:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 5px 12px rgba(21, 94, 239, 0.2);
+}
+
+.see-all {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.see-all a {
+    display: inline-block;
+    padding: 11px 23px;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 9px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.see-all a:hover {
+    color: var(--white);
+    background: var(--primary);
+}
+
+/* ========================================
+   8. TESTIMONI PELANGGAN
+======================================== */
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.testimonials blockquote {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    color: #536178;
+    font-size: 14px;
+    font-style: italic;
+    position: relative;
+}
+
+.testimonials blockquote::before {
+    content: "“";
+    display: block;
+    color: var(--primary);
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.testimonials cite {
+    display: block;
+    margin-top: 18px;
+    color: var(--navy);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 800;
+}
+
+/* ========================================
+   9. NEWSLETTER
+======================================== */
+.newsletter {
+    width: min(1200px, 92%);
+    margin: 20px auto 45px;
+    padding: 38px 25px;
+    border-radius: 20px;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(120deg, #102a56, #155eef);
+    box-shadow: var(--shadow);
+}
+
+.newsletter h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.newsletter form {
+    max-width: 490px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    outline: none;
+}
+
+.newsletter input:focus {
+    border-color: var(--accent);
+}
+
+.newsletter .btn-small {
+    width: auto;
+    padding: 12px 18px;
+    color: #26354d;
+    background: var(--accent);
+    white-space: nowrap;
+}
+
+.newsletter .btn-small:hover {
+    background: #ffd166;
+}
+
+/* ========================================
+   10. FOOTER
+======================================== */
+.site-footer {
+    padding: 45px 4% 20px;
+    background: #0b1d3a;
+    color: #c5d2e8;
+}
+
+.footer-cols {
+    width: min(1200px, 100%);
+    margin: 0 auto 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-cols h4 {
+    margin-bottom: 15px;
+    color: var(--white);
+    font-size: 17px;
+}
+
+.footer-cols p,
+.footer-cols a {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 13px;
+    color: #b8c7df;
+}
+
+.footer-cols a:hover {
+    color: var(--accent);
+}
+
+.site-footer>p {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 20px;
+    text-align: center;
+    color: #90a4c2;
+}
+
+/* ========================================
+   11. ANIMASI
+======================================== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   12. RESPONSIVE TABLET
+======================================== */
+@media (max-width: 900px) {
+    .header-top {
+        flex-wrap: wrap;
+        padding: 18px 0;
+        gap: 15px;
+    }
+
+    .header-top h1 {
+        font-size: 22px;
+    }
+
+    .search-box {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    .site-header nav {
+        gap: 25px;
+    }
+
+    .benefits,
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .hero::after {
+        right: 4%;
+        opacity: 0.1;
+    }
+}
+
+/* ========================================
+   13. RESPONSIVE HP
+======================================== */
+@media (max-width: 520px) {
+    section {
+        padding: 30px 0;
+    }
+
+    .header-top h1 {
+        font-size: 19px;
+    }
+
+    .cart-link {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .site-header nav {
+        justify-content: space-around;
+        gap: 8px;
+        padding: 13px 10px;
+    }
+
+    .site-header nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 330px;
+        padding: 45px 6%;
+    }
+
+    .hero-content h2 {
+        font-size: 31px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero::after {
+        right: -15px;
+        top: 75%;
+        font-size: 100px;
+    }
+
+    .benefits {
+        gap: 10px;
+    }
+
+    .benefits>div {
+        padding: 15px 8px;
+    }
+
+    .benefits strong {
+        font-size: 13px;
+    }
+
+    .benefits span {
+        font-size: 11px;
+    }
+
+    .section-title {
+        font-size: 23px;
+    }
+
+    .category-grid {
+        gap: 12px;
+    }
+
+    .category {
+        min-height: 95px;
+        font-size: 14px;
+        padding: 15px 8px;
+    }
+
+    .product-grid {
+        gap: 12px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 135px;
+    }
+
+    .product-card h3 {
+        font-size: 14px;
+        min-height: 42px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .btn-small {
+        font-size: 11px;
+        padding: 10px 5px;
+    }
+
+    .badge {
+        top: 17px;
+        left: 15px;
+        font-size: 10px;
+    }
+
+    .newsletter {
+        padding: 28px 16px;
+    }
+
+    .newsletter h2 {
+        font-size: 21px;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+    }
+
+    .newsletter .btn-small {
+        width: 100%;
+    }
+
+    .footer-cols {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}

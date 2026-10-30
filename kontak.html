@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Toko Parabot 24/7</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="homepage.css">
+
+    <style>
+        .contact-hero {
+            background: linear-gradient(120deg, #102a56, #155eef);
+            padding: 55px 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-hero h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .contact-hero p {
+            color: #e1eaff;
+        }
+
+        .contact-container {
+            width: min(1100px, 92%);
+            margin: auto;
+            padding: 45px 0 60px;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 35px;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 24px 20px;
+            border: 1px solid #e4eaf3;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(20, 50, 100, 0.07);
+        }
+
+        .contact-info-card .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info-card h3 {
+            color: #102a56;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .contact-info-card p {
+            color: #718096;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-main {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .contact-details,
+        .contact-form-box {
+            background: white;
+            padding: 28px;
+            border: 1px solid #e4eaf3;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(20, 50, 100, 0.07);
+        }
+
+        .contact-details h2,
+        .contact-form-box h2 {
+            color: #102a56;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .contact-details>p {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .detail-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #edf0f6;
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .detail-item strong {
+            display: block;
+            color: #102a56;
+            margin-bottom: 5px;
+        }
+
+        .detail-item span,
+        .detail-item a {
+            color: #718096;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .detail-item a:hover {
+            color: #155eef;
+        }
+
+        .contact-form-box>p {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form label {
+            color: #26354d;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            display: block;
+            width: 100%;
+            margin-top: 7px;
+            padding: 12px 13px;
+            border: 1px solid #dce5f3;
+            border-radius: 9px;
+            outline: none;
+            background: #fbfcff;
+            color: #26354d;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            border-color: #155eef;
+            box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.09);
+        }
+
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 13px;
+        }
+
+        .contact-note {
+            margin-top: 15px;
+            color: #718096;
+            font-size: 12px;
+        }
+
+        .contact-map {
+            margin-top: 30px;
+            padding: 25px;
+            text-align: center;
+            background: #edf3ff;
+            border-radius: 15px;
+        }
+
+        .contact-map h2 {
+            color: #102a56;
+            margin-bottom: 8px;
+        }
+
+        .contact-map p {
+            color: #59677d;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 750px) {
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-main {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hero h2 {
+                font-size: 29px;
+            }
+
+            .contact-details,
+            .contact-form-box {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-top">
+            <h1>Toko Parabot 24/7</h1>
+
+            <form class="search-box" action="produk.html" method="get">
+                <input type="search" name="cari" placeholder="Cari produk, misalnya blender" aria-label="Cari produk">
+                <button type="submit">Cari</button>
+            </form>
+
+            <a class="cart-link" href="#">Keranjang (0)</a>
+        </div>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="tentang.html">Tentang</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- BANNER -->
+    <section class="contact-hero">
+        <h2>Hubungi Kami</h2>
+        <p>Ada pertanyaan tentang produk atau pesanan? Kami siap membantu.</p>
+    </section>
+
+    <main class="contact-container">
+
+        <!-- INFORMASI SINGKAT -->
+        <div class="contact-info-grid">
+
+            <div class="contact-info-card">
+                <div class="icon">📍</div>
+                <h3>Alamat Toko</h3>
+                <p>Jl. Jendral Sudirma No. 20, Serang</p>
+            </div>
+
+            <div class="contact-info-card">
+                <div class="icon">🕒</div>
+                <h3>Jam Layanan</h3>
+                <p>Buka setiap hari, 24 jam</p>
+            </div>
+
+            <div class="contact-info-card">
+                <div class="icon">💬</div>
+                <h3>Layanan Pelanggan</h3>
+                <p>Silakan kirim pesan melalui formulir di halaman ini.</p>
+            </div>
+
+        </div>
+
+        <div class="contact-main">
+
+            <!-- DETAIL KONTAK -->
+            <section class="contact-details">
+                <h2>Informasi Kontak</h2>
+                <p>
+                    Hubungi Toko Parabot 24/7 untuk mendapatkan informasi
+                    mengenai produk, ketersediaan barang, harga, dan
+                    pengiriman.
+                </p>
+
+                <div class="detail-item">
+                    <strong>📍 Alamat</strong>
+                    <span>Jl. Jendral Sudirma No. 20, Serang</span>
+                </div>
+
+                <div class="detail-item">
+                    <strong>📞 Nomor Telepon</strong>
+                    <span>+62 8567641382</span>
+                </div>
+
+                <div class="detail-item">
+                    <strong>✉️ Email</strong>
+                    <span>snaufallia@gmail.com</span>
+                </div>
+
+                <div class="detail-item">
+                    <strong>🕒 Jam Operasional</strong>
+                    <span>Setiap hari, 24 jam</span>
+                </div>
+
+                <div class="detail-item">
+                    <strong>🚚 Informasi Pengiriman</strong>
+                    <span>
+                        Informasi biaya dan estimasi pengiriman dapat
+                        ditanyakan kepada layanan pelanggan.
+                    </span>
+                </div>
+            </section>
+
+            <!-- FORMULIR PESAN -->
+            <section class="contact-form-box">
+                <h2>Kirim Pesan</h2>
+                <p>
+                    Isi formulir berikut dengan informasi yang benar
+                    agar pertanyaan kamu mudah dipahami.
+                </p>
+
+                <form class="contact-form" id="contactForm">
+
+                    <label for="nama">
+                        Nama Lengkap
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama kamu" required>
+                    </label>
+
+                    <label for="email">
+                        Alamat Email
+                        <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                    </label>
+
+                    <label for="topik">
+                        Topik Pesan
+                        <select id="topik" name="topik" required>
+                            <option value="">Pilih topik pesan</option>
+                            <option value="Informasi Produk">Informasi Produk</option>
+                            <option value="Pemesanan">Pemesanan</option>
+                            <option value="Pembayaran">Pembayaran</option>
+                            <option value="Pengiriman">Pengiriman</option>
+                            <option value="Keluhan">Keluhan</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </label>
+
+                    <label for="pesan">
+                        Pesan
+                        <textarea id="pesan" name="pesan" placeholder="Tuliskan pertanyaan atau pesan kamu..."
+                            required></textarea>
+                    </label>
+
+                    <button type="submit" class="btn-small">
+                        Kirim Pesan
+                    </button>
+
+                </form>
+
+                <p class="contact-note">
+                    Catatan: formulir ini merupakan contoh antarmuka.
+                    Pesan belum terkirim ke toko sebelum dihubungkan
+                    dengan email, WhatsApp, atau sistem backend.
+                </p>
+            </section>
+
+        </div>
+
+        <!-- ALAMAT -->
+        <section class="contact-map">
+            <h2>Lokasi Toko Kami</h2>
+            <p>
+                Kunjungi Toko Parabot 24/7 di Serang untuk mendapatkan
+                informasi lebih lanjut mengenai produk yang tersedia.
+            </p>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Jl.+Jendral+Sudirman+Serang"
+                target="_blank" rel="noopener noreferrer">
+                Lihat di Google Maps
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-cols">
+            <div>
+                <h4>Toko Parabot 24/7</h4>
+                <p>Jl. Jendral Sudirma No. 20, Serang</p>
+                <p>Buka setiap hari, 24 jam</p>
+            </div>
+
+            <div>
+                <h4>Bantuan</h4>
+                <a href="kontak.html">Hubungi kami</a>
+                <a href="produk.html">Daftar produk</a>
+                <a href="#">Informasi pengiriman</a>
+            </div>
+
+            <div>
+                <h4>Pembayaran</h4>
+                <p>Transfer bank, e-wallet, COD</p>
+            </div>
+        </div>
+
+        <p>
+            <small>&copy; 2026 Toko Parabot 24/7. All Rights Reserved.</small>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            alert(
+                "Formulir berhasil diperiksa! " +
+                "Untuk mengirim pesan ke toko, formulir perlu dihubungkan " +
+                "dengan email, WhatsApp, atau backend."
+            );
+        });
+    </script>
+
+</body>
+
+</html>
